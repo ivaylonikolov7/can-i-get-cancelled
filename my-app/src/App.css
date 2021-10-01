@@ -10,16 +10,16 @@ body{
 #searchbar::before
 {
 	content: '@';
-	width:50px;
-	height:calc(2rem);
+	width: 50px;
+	padding: 5px 0;
 	background-color: var(--third);
 	color: #fff;
 	display: inline-block;
+	position: absolute;
+	z-index: 100;
+}
+#searchbar{
 	position: relative;
-	left: 50px;
-	top: calc(-0.25rem);
-	z-index:100;
-	
 }
 #searchbar input{
 	display: inline-block;
@@ -60,4 +60,18 @@ div s{
 div.loaded s::before{
 	width:110px;
 	transition: width ease-in 1s;
+}
+.tweet{
+	background-color: #fff;
+	width:400px;
+	margin: 20px auto;
+}
+.twitter-tweet-rendered{
+	margin: 0 auto;
+}
+#all-tweets .offensive:first-of-type{
+	margin-top: 50px;
+}
+.offensive{
+	margin-bottom: 30px;
 }

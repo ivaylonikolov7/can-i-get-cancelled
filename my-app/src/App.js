@@ -35,9 +35,9 @@ function App() {
 			console.log(tweets);
 			tweets.forEach(tweet => {
 				offensiveWords.forEach((word)=>{
-					if(tweet.text.includes(word)){
+					//if(tweet.text.includes(word)){
 						offensiveTweetsResponse.push(tweet);
-					};
+					//};
 				})
 			});
 			setOffensiveTweets(offensiveTweetsResponse);
