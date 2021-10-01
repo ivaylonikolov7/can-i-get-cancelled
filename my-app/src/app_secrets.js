@@ -1,0 +1,6 @@
+export const APP_SECRETS = {
+    API_KEY : 'ZbACZjdeISWSW7CKktkqLLDvi',
+    API_KEY_SECRET: 'xBTvKagdYiqDJzKdNvoK8K0hNlGAogLjnF2mVju6U4GNCekQiU',
+    BEARER_TOKEN: 'AAAAAAAAAAAAAAAAAAAAABwoUAEAAAAAfZqBIhX1rwewiNJZCPsHZOJZEwc%3DNqaLDZgZhBuJvu038ogUoag2BfQgRpuPVGfYZPp7Zvy39ZknoW',
+    BASE_URL: 'https://api.twitter.com'
+}
