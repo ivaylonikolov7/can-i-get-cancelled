@@ -2,21 +2,47 @@ import './App.css';
 import {useEffect, useState} from 'react';
 import {ReactComponent as AngrySVG} from './images/angry-emoji-svgrepo-com.svg';
 import OffensiveTweets from './Components/OffensiveTweets'
+import  list  from './profanity.js';
 
 const axios = require('axios').default;
+
 function App() {
 	const baseUrl = 'http://localhost:8000';
+
 	let [isLoaded, setIsLoaded] = useState(false);
 	let [inputState, setInputState] = useState('');
 	let [offensiveTweets, setOffensiveTweets] = useState([]);
+	let [isCancelled, setIsCancelled] = useState();
+
 	useEffect(()=>{
 		setIsLoaded(true);
 	}, [])
+
 	function handleInputChange(e){
 		setInputState(e.target.value);
 	}
-	function findUserTwitter(e){
 
+	function tweetExists(tweetsFrontend, tweetCheck){
+		let result = false;
+		console.log(tweetsFrontend);
+		tweetsFrontend.forEach((t) =>{
+			if(t === tweetCheck){
+				result = true;
+			}
+		})
+		return result;
+	}
+	function stringContains(text, word){
+		let textWords = text.match(/[a-z'\-]+/gi);
+		let result = false;
+		textWords.forEach(textWord => {
+			if(textWord === word){
+				result = true;
+			}
+		})
+		return result;
+	}
+	function findUserTwitter(e){
 		axios.get(baseUrl + '/users', {
 			params: {
 				username: inputState
@@ -30,19 +56,34 @@ function App() {
 			})
 		}).then((response)=>{
 			let tweets = response.data;
-			let offensiveWords = ['nigger'];
-			let offensiveTweetsResponse = [];
-			console.log(tweets);
-			tweets.forEach(tweet => {
-				offensiveWords.forEach((word)=>{
-					//if(tweet.text.includes(word)){
-						offensiveTweetsResponse.push(tweet);
-					//};
-				})
-			});
-			setOffensiveTweets(offensiveTweetsResponse);
+			let offTweets = findOffensiveTweets(tweets);
+			setOffensiveTweets(offTweets);
+			if(offTweets.length > 0){
+				setIsCancelled(<div className="is-cancelled mt-5 text-center">
+					You Done Messed Up A-Aron!
+				</div>);
+			}
+			else{
+				setIsCancelled(<div className="is-cancelled mt-5">Not today!</div>);
+			}
+			
 		})
 	}
+	function findOffensiveTweets(tweets){
+		const profanity = list;
+		let offensiveWords = profanity.split('\n');
+		let uniqueTweets = [];
+		tweets.forEach(tweet =>{
+			offensiveWords.forEach(offensiveWord =>{
+				if(stringContains(tweet.text, offensiveWord) && !tweetExists(uniqueTweets, tweet)){
+					console.log(offensiveWord);
+					uniqueTweets.push(tweet);
+				}	
+			})
+		})
+		return uniqueTweets;
+	}
+
   return (
     <div className={isLoaded ? 'loaded text-center mt-10' : ''}>
 		<AngrySVG width="150px" height="150px" style={{
@@ -62,7 +103,7 @@ function App() {
 			/>
 		</div>
 		<button className='bg-third p-2 mt-6 text-white' onClick={findUserTwitter}>So ? 🔎 </button>
-
+		{isCancelled}
 		<OffensiveTweets data = {offensiveTweets}/>
     </div>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import TweetEmbed from 'react-tweet-embed'
 
+
 function OffensiveTweets(props){
     let tweets = props.data;
     return (
