@@ -9,6 +9,7 @@
 body{
 	background-color: #003049;
 	font-family: 'Montserrat', sans-serif;
+	color: #fff;
 }
 #searchbar::before
 {
@@ -78,10 +79,18 @@ div.loaded s::before{
 .offensive{
 	margin-bottom: 30px;
 }
-.header{
-	
-}
 .is-cancelled{
 	color: #fff;
 	font-size: 30px;
+}
+table{
+	background-color: #fff;
+	color: #000;
+	border-collapse: separate;
+	border-spacing: 20px 10px;
+	border-radius: 5px;
+	margin: 50px auto;
+}
+table img{
+	margin-right:20px;
 }
