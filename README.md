@@ -109,7 +109,7 @@ Distributed under the MIT License.
 <!-- CONTACT -->
 ## Contact
 
-Ivaylo Nikolov - [@yIvayloWasTaken](https://twitter.com/IvayloWasTaken) - me@ivaylo.codes
+Ivaylo Nikolov - [@IvayloWasTaken](https://twitter.com/IvayloWasTaken) - me@ivaylo.codes
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
