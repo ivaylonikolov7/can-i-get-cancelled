@@ -94,3 +94,6 @@ table{
 table img{
 	margin-right:20px;
 }
+input#searchbar{
+	color: #000;
+}

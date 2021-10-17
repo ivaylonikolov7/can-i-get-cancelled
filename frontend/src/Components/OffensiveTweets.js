@@ -4,6 +4,7 @@ import TweetEmbed from 'react-tweet-embed'
 
 function OffensiveTweets(props){
     let tweets = props.data;
+    console.log(props);
     return (
         <div id="all-tweets">
             {tweets.map((tweet, index)=>{
@@ -14,8 +15,6 @@ function OffensiveTweets(props){
 
                         }}></TweetEmbed>
                     </div>
-                
-                //<div className = "tweet" key={`${index}`}>{tweet.text}</div>
             })}
         </div>
     );

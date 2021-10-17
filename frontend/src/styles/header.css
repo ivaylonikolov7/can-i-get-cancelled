@@ -1,0 +1,16 @@
+ul#menu{
+    color: color;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+ul#menu li{
+    margin-right: 10px;
+
+}
+ul#menu li a{
+    transition: 1s ease-in all;
+}
+ul#menu li a:hover{
+    text-decoration: underline;    
+}

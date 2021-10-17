@@ -1,7 +1,7 @@
 import React from 'react';
 import Index from './Pages/Index'
 import Leaderboard from './Pages/Leaderboard';
-
+import Header from './Components/Header';
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -12,6 +12,7 @@ import {
 
 function App() {
 	return (<Router>
+		<Header />
 		<Switch>
 		  <Route path="/leaderboard">
 			  <Leaderboard />
