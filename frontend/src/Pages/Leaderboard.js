@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {useEffect, useState}  from 'react';
 import {ReactComponent as AngrySVG} from '../images/angry-emoji-svgrepo-com.svg';
-import APP_SECRETS from '../app_secrets';
+import APP_CONSTANTS from '../APP_CONSTANTS';
 import '../styles/leaderboard.css';
 
 function Leaderboard(){
@@ -9,7 +9,7 @@ function Leaderboard(){
     let [leaderboard, setLeaderboard] = useState(false);
     useEffect(async ()=>{
         setIsLoaded(true);
-        let result = await axios.get(APP_SECRETS.SERVER_BASE_URL + 'users/leaderboard');
+        let result = await axios.get(APP_CONSTANTS.SERVER_BASE_URL + 'users/leaderboard');
         setLeaderboard(result.data);
     }, [])
     function objectIdToTimestamp(id){

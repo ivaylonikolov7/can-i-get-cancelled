@@ -26,22 +26,15 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://canigetcancelled.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+This app should save you from the angry twitter users for saying something controversial but dont rely on it. Its still a work in progress. If you have any ideas that might contribute to it feel free to make it better. 
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+So how does it work? 
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+-It basically checks if you have said offensive words in your twitter from a big list with non pc words (the list is located in `server/utils/profanity.js`).  
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 ### Built With
 
@@ -55,12 +48,10 @@ Use the `BLANK_README.md` to get started.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+If you want to run it locally this is how you do it:
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
   npm install npm@latest -g
@@ -68,18 +59,22 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://developer.twitter.com/en/docs](https://developer.twitter.com/en/docs)
+1. Get your bearer token from [https://developer.twitter.com/en/docs](https://developer.twitter.com/en/docs)
+2. Make a MongoDB Atlas account and find your connection string
 2. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/ivaylonikolov7/can-i-get-cancelled.git
    ```
 3. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+4. Create a `server_secrets.js` file with the following structure: 
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   module.exports = {
+        MONGODB_CONNECTION_STRING: 'YOUR MONGODB CONNECTION STRING',
+        BEARER_TOKEN: 'YOUR TWITTER API BEARER TOKEN'
+    }
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -105,7 +100,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
