@@ -30,9 +30,9 @@
 
 This app should save you from the angry twitter users for saying something controversial but dont rely on it. Its still a work in progress. If you have any ideas that might contribute to it feel free to make it better. 
 
-So how does it work? 
+## So how does it work? 
 
--It basically checks if you have said offensive words in your twitter from a big list with non pc words (the list is located in `server/utils/profanity.js`).  
+-It basically checks if you have said offensive words in your twitter from a big list with non pc words (the list is located in `server/utils/profanity.js`).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -67,6 +67,9 @@ If you want to run it locally this is how you do it:
    ```
 3. Install NPM packages
    ```sh
+   cd frontend
+   npm install
+   cd ../server
    npm install
    ```
 4. Create a `server_secrets.js` file with the following structure: 
@@ -76,6 +79,18 @@ If you want to run it locally this is how you do it:
         BEARER_TOKEN: 'YOUR TWITTER API BEARER TOKEN'
     }
    ```
+
+5. Start backend side of the project
+    ```sh
+    cd server
+    yarn start
+    ```
+
+6. You should start the frontend
+    ```sh
+    cd frontend
+    yarn start
+    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
