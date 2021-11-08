@@ -1,3 +1,3 @@
 export default {
-    SERVER_BASE_URL: 'http://localhost:8000/'
+    SERVER_BASE_URL: 'https://can-they-get-cancelled.herokuapp.com/'
 }
