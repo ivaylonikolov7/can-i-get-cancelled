@@ -3,7 +3,10 @@ var router = express.Router();
 let axios = require('axios');
 let profanity = require('../utils/profanity.js');
 const { MongoClient} = require('mongodb');
-let secrets = require('../server_secrets');
+let secrets = {
+	MONGODB_CONNECTION_STRING: process.env.MONGODB_CONNECTION_STRING,
+	BEARER_TOKEN: process.env.BEARER_TOKEN
+};
 
 const client = new MongoClient(secrets.MONGODB_CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true });
 

@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
-let secrets = require('../server_secrets.js');
+let secrets = {
+	MONGODB_CONNECTION_STRING: process.env.MONGODB_CONNECTION_STRING,
+	BEARER_TOKEN: process.env.BEARER_TOKEN
+};
 const { MongoClient} = require('mongodb');
 
 const client = new MongoClient(secrets.MONGODB_CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true });
