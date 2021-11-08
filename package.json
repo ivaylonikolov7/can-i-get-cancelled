@@ -7,6 +7,6 @@
     "react-bootstrap": "^2.0.0-rc.0"
   },
   "scripts": {
-    "start": "node ./server/bin/www"
+    "start": "cd server && npm install && node ./server/bin/www"
   }
 }
