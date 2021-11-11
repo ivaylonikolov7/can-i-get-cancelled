@@ -25,7 +25,7 @@ function Index() {
 	
 	async function findUserTwitter(){
 		try {
-			let tweets = await axios.get(baseUrl + '/tweets', {
+			let tweets = await axios.get(baseUrl + 'gtweets', {
 				params: {
 					username: inputState
 				}
