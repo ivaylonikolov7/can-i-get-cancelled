@@ -3,12 +3,13 @@ import '../App.css';
 import {useEffect, useState} from 'react';
 import {ReactComponent as AngrySVG} from '../images/angry-emoji-svgrepo-com.svg';
 import OffensiveTweets from '../Components/OffensiveTweets';
+import APP_CONSTANTS from '../APP_CONSTANTS';
 
 const axios = require('axios').default;
 
 function Index() {
-    const baseUrl = 'http://localhost:8000';
-
+	const baseUrl = APP_CONSTANTS.SERVER_BASE_URL;
+	console.log(APP_CONSTANTS);
 	let [isLoaded, setIsLoaded] = useState(false);
 	let [inputState, setInputState] = useState('');
 	let [offensiveTweets, setOffensiveTweets] = useState([]);
